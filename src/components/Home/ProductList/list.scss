@@ -1,0 +1,159 @@
+@import '../../../breakpoint.scss';
+@import '../../../global.scss';
+
+.product_list {
+    flex: 2;
+    // border: 1px solid blue;
+    padding: 22px;
+
+    @include breakpoint-down(small) {
+        width: 100%;
+        border-top: 1px solid rgb(197, 197, 197);
+    }
+
+    &_header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+
+        span {
+            color: var(--text-gray);
+            font-size: 17px;
+
+            @include breakpoint-down(small) {
+                color: black;
+                font-weight: bold;
+                font-size: 13px;
+            }
+
+        }
+
+        .select {
+
+
+            position: relative;
+
+
+            .icon {
+                // margin-left: -20px;
+                // margin-right: 20px;
+                position: absolute;
+                top: 31%;
+                right: 5%;
+            }
+
+            select {
+                background-color: transparent;
+                padding: 12px 25px 12px 19px;
+                border-radius: 30px;
+                -webkit-appearance: none;
+                appearance: none;
+                outline: none;
+
+                @include breakpoint-down(small) {
+                    padding: 8px 25px;
+                }
+
+            }
+
+
+        }
+    }
+
+    .card_list {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        padding: 12px 0px;
+        grid-gap: 25px;
+
+        @include breakpoint-down(small) {
+            grid-template-columns: 1fr;
+            padding-top: 50px;
+            grid-gap: 35px;
+            justify-items: center;
+
+        }
+
+        //here is card comps scsss U can find in card scss
+    }
+
+    .pagination_container {
+        // background-color: aqua;
+        display: flex;
+        justify-content: center;
+        padding-top: 45px;
+        padding-bottom: 60px;
+        max-width: 100%;
+
+        .pagination {
+            display: flex;
+
+
+
+            .page_item {
+                width: 55px;
+                height: 55px;
+                border-radius: 50%;
+                border: 1px solid rgb(233, 233, 233);
+                font-size: 25px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+                margin-left: 20px;
+                margin-right: 20px;
+
+                @include breakpoint-down(small) {
+                    width: 35px;
+                    height: 35px;
+                }
+
+                a {
+                    cursor: pointer;
+
+                    @include breakpoint-down(small) {
+                        font-size: 1rem;
+                    }
+                }
+            }
+
+            .page_item.disabled {
+                opacity: .2;
+                pointer-events: none;
+            }
+
+
+            .page_item.selected {
+                background-color: var(--clr-green);
+                border: none;
+                font-weight: bold;
+                transition: .5s ease-in-out;
+
+                a {
+                    color: white;
+                }
+            }
+        }
+    }
+}
+
+// .sort_btn {
+//     display: flex;
+//     align-items: center;
+//     padding: 12px 19px;
+//     border: 1px solid black;
+//     border-radius: 30px;
+
+//     .icon {
+//         margin-left: 25px;
+//         font-weight: bold;
+
+//     }
+
+//     span {
+//         color: black;
+//         font-weight: bold;
+
+//     }
+// }

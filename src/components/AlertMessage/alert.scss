@@ -1,0 +1,56 @@
+@import '../../breakpoint.scss';
+@import '../../global.scss';
+
+.alert {
+    position: fixed;
+    bottom: 0px;
+    transform: translateY(110px);
+    right: 220px;
+    padding: 12px;
+    border-radius: 15px;
+    width: auto;
+    height: auto;
+    text-transform: capitalize;
+    animation-name: alert;
+    animation-iteration-count: 1;
+    animation-duration: 3.2s;
+    animation-timing-function: ease;
+
+    @include breakpoint-down(small) {
+        right: 0px;
+        padding: 12px 15px;
+
+    }
+
+    &.danger {
+        background-color: red;
+        color: white;
+        transform: translateY(-190px);
+    }
+
+    &.success {
+        transform: translateY(-190px);
+        background-color: rgb(21, 255, 0);
+        color: rgb(27, 26, 26);
+        // animation-name: success;
+        // animation-iteration-count: 1;
+        // animation-duration: 1s;
+        // animation-timing-function: cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    }
+}
+
+@keyframes alert {
+    0% {
+        transform: translateY(110px);
+
+    }
+
+    60% {
+        transform: translateY(-190px);
+    }
+
+    100% {
+        transform: translateY(110px);
+
+    }
+}

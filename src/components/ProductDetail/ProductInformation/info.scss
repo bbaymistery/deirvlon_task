@@ -1,0 +1,74 @@
+@import '../../../global.scss';
+@import '../../../breakpoint.scss';
+
+.information {
+    hr {
+
+        border: 1px solid rgb(202, 201, 201);
+    }
+
+    &_title {
+        color: var(--clr-green);
+        margin-bottom: 21px;
+        margin-left: 100px;
+
+        @include breakpoint-down(small) {
+            margin-left: 0px;
+
+        }
+    }
+
+    .info {
+        margin: 21px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include breakpoint-down(small) {
+            flex-direction: column;
+        }
+
+        h2 {
+            margin-bottom: 23px;
+            font-size: 25px;
+            font-weight: normal;
+
+        }
+
+        ul {
+            li {
+                &:not(:last-child) {
+                    padding-bottom: 18px;
+                }
+            }
+        }
+
+        .left {
+            flex: 1;
+            margin-left: 100px;
+
+            @include breakpoint-down(small) {
+                margin-left: 0px;
+                margin-left: 0px;
+                margin-top: 1rem;
+                // border-top: 1px solid rgb(230, 17, 17);
+                width: 100%;
+                padding-top: 2rem;
+            }
+
+        }
+
+        .right {
+            flex: 1;
+            margin-left: 100px;
+
+            @include breakpoint-down(small) {
+                margin-left: 0px;
+                margin-top: 1rem;
+                border-top: 1px solid rgb(202, 201, 201);
+                width: 100%;
+                padding-top: 2rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,140 @@
+@import '../../global.scss';
+
+//ul li a  > 24px
+//logo 36px
+//icons width 30 height 30
+.sidebar_container {
+    height: 100%;
+    background-color: rgb(211, 211, 211);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    transform: translateX(-100%);
+    transition: .5s ease-in-out;
+
+    // display: block;
+    &.active {
+        transform: translateX(0%);
+    }
+
+    .sidebar {
+        padding: 10px 0px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        position: relative;
+
+
+
+        .logo {
+            align-self: flex-start;
+            margin-left: 2rem;
+
+            span {
+                font-size: 35px;
+            }
+
+            .left {
+                font-weight: bold;
+                color: var(--clr-green)
+            }
+
+            .right {
+                color: var(--clr-blue)
+            }
+        }
+
+        .list_for_mobile {
+            width: 100%;
+
+            ul {
+                display: flex;
+                flex-direction: column;
+                margin-top: 2rem;
+                text-align: center;
+
+                li {
+                    color: red;
+                    transition: .5s ease;
+                    padding: 10px;
+                    cursor: pointer;
+
+                    &:hover {
+                        background-color: white;
+                    }
+
+                    a {
+                        font-size: 20px;
+                    }
+                }
+            }
+        }
+
+        .icons_for_mobile {
+            position: relative;
+            width: 82px;
+            height: 30px;
+            font-size: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 3rem;
+
+            .badge {
+                font-size: .8rem;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background-color: rgb(1, 2, 2);
+                color: rgb(47, 241, 255);
+                padding: 11px;
+                display: flex;
+                font-weight: bold;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top: -5px;
+                right: -15px;
+            }
+
+            .heart {
+                cursor: pointer;
+                transition: .5s ease;
+
+                &:hover {
+                    transform: translateY(-5px);
+                }
+            }
+
+            .shopping {
+                cursor: pointer;
+
+                transition: .5s ease;
+
+                &:hover {
+                    transform: translateY(-5px);
+                }
+            }
+        }
+
+
+        .close_icon {
+            position: absolute;
+            // font-size: 5rem;
+            top: 10px;
+            font-size: 2rem;
+            right: 4%;
+            cursor: pointer;
+            transition: .5s ease-in-out;
+
+            &:hover {
+                transform: scale(1.1);
+            }
+        }
+
+    }
+}

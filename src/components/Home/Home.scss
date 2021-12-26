@@ -1,0 +1,28 @@
+@import '../../breakpoint.scss';
+@import '../../global.scss';
+
+.home {
+    padding-top: 56px;
+
+    @include breakpoint-down(small) {
+        padding-top: 36px;
+
+    }
+
+    .container {
+        display: flex;
+
+        @include breakpoint-down(small) {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        // filter side of home
+        // .filter {}
+
+
+
+        // right side U can find definetly in produclt list component
+        .product_list {}
+    }
+}

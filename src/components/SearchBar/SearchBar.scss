@@ -1,0 +1,93 @@
+@import '../../global.scss';
+@import '../../breakpoint.scss';
+
+.search_bar {
+    background-color: var(--clr-green);
+    padding: 28px 0px;
+
+    @include breakpoint-down(small) {
+        padding: 15px 0px;
+
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+
+        @include breakpoint-down(small) {
+            justify-content: center;
+        }
+
+        .select_category {
+            display: flex;
+            padding: 14px 26px 14px 21px;
+            background-color: #fff;
+            border-radius: 30px;
+            align-items: center;
+            font-weight: bold;
+
+            @include breakpoint-down(small) {
+                display: none;
+            }
+
+            &_icon {
+                font-size: 22px;
+                color: var(--clr-green);
+            }
+
+            &_text {
+                font-size: 17px;
+                color: var(--clr-green);
+                margin-left: 18px;
+                font-weight: 500;
+            }
+        }
+
+        .search {
+            flex: 2;
+            // background-color: yellow;
+            margin-left: 68px;
+            display: flex;
+            align-items: center;
+
+            @include breakpoint-down(small) {
+                flex: none;
+                margin-left: 0px;
+
+            }
+
+            &_input {
+                border: none;
+                width: 610px;
+                padding: 17px 24px;
+                border-radius: 30px;
+                outline: none;
+
+                @include breakpoint-down(small) {
+                    width: 240px;
+                    padding: 10px 17px;
+                }
+
+                &::placeholder {
+                    color: var(--clr-gray);
+                }
+
+                &:active {
+                    border: none;
+                }
+            }
+
+            &_icon {
+                color: var(--clr-green);
+                font-weight: normal;
+                margin-left: -40px;
+                font-size: 33px;
+
+                @include breakpoint-down(small) {
+                    font-size: 20px;
+
+                }
+            }
+        }
+    }
+}

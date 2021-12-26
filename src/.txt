@@ -1,0 +1,4 @@
+Sayfa acilir acilmaz Hemen anasayfadan basladigi icin Product list home componenti icine alinmisdir... Fazla pages olmadiginnan hepsini component icine alinarak yapilmisdir.
+
+Mesela product detail Tamamen ayri bir comp olarak dusunuldu
+  Ve onunda icine komponentlere bolerek eklentiler yapildi

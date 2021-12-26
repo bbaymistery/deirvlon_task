@@ -1,0 +1,338 @@
+@import '../../breakpoint.scss';
+@import '../../global.scss';
+
+.modal {
+    background-color: rgba(0, 0, 0, .5);
+    height: 100vh;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    position: fixed;
+    transition: 0.6s ease-in-out;
+
+    .container {
+        @include breakpoint-down(small) {
+            display: flex;
+            justify-content: center;
+            width: 0;
+        }
+
+        .modal_box {
+            width: 1342px;
+            height: 759px;
+            background-color: #fff;
+            margin-top: 106px;
+            padding: 43px 85px;
+
+            @include breakpoint-down(small) {
+                width: 400px;
+                height: 509px;
+                padding: 23px 28px;
+            }
+
+            &_title {
+                font-size: 38px;
+
+                @include breakpoint-down(small) {
+                    font-size: 20px;
+                    text-align: center;
+                }
+
+                span {
+                    @include breakpoint-down(small) {
+                        display: none;
+                    }
+                }
+            }
+
+            .cart_item {
+                margin-top: 51px;
+                margin-bottom: 51px;
+                display: flex;
+                align-items: center;
+                width: 755px;
+                height: 129px;
+
+                @include breakpoint-down(small) {
+                    margin-top: 5px;
+                    margin-bottom: 5px;
+                }
+
+                &_image {
+                    width: 87px;
+                    height: 87px;
+                    margin-left: 5px;
+
+                    @include breakpoint-down(small) {
+                        width: 41px;
+                        height: 41px;
+                        margin-left: 0px;
+                    }
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                &_name {
+                    margin: 0px 60px;
+
+                    @include breakpoint-down(small) {
+                        margin: 0px 19px;
+
+                    }
+
+                    .subtitle {
+                        p {
+                            color: #4E4E4E;
+                            font-size: 16px;
+
+                            @include breakpoint-down(small) {
+                                font-size: 10px;
+                            }
+
+                        }
+                    }
+
+                    h3 {
+                        font-size: 24px;
+                        font-weight: bold;
+
+                        @include breakpoint-down(small) {
+                            font-size: 12px;
+                        }
+                    }
+                }
+
+                &_amount_box {
+                    margin-right: 60px;
+                    width: 121px;
+                    height: 32px;
+                    border: 1px solid #C4C4C4;
+                    display: flex;
+                    justify-content: space-between;
+                    padding: 6px 10px;
+                    border-radius: 5px;
+                    font-size: 18px;
+                    align-items: center;
+                    margin-top: 6px;
+
+                    .decrease,
+                    .increase {
+                        cursor: pointer;
+                        transition: .5s ease;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                    }
+
+                    .increase {
+                        &:hover {
+                            font-weight: bold;
+                            transform: scale(1.2);
+                            color: rgb(0, 160, 13);
+                        }
+                    }
+
+                    .decrease {
+                        &:hover {
+                            color: rgb(223, 0, 0);
+                            font-weight: bold;
+                            transform: scale(1.2);
+
+                        }
+                    }
+
+                    @include breakpoint-down(small) {
+                        width: 81px;
+                        height: 32px;
+                        margin-right: 21px;
+                        font-size: 14px;
+                        margin-top: 0px;
+
+                    }
+                }
+
+                &_price {
+                    font-size: 24px;
+                    color: var(--clr-green);
+
+                    @include breakpoint-down(small) {
+                        font-size: 15px;
+
+                    }
+                }
+            }
+
+            .credit_section {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+
+
+                ///card section content
+                .content {
+                    width: 827px;
+                    height: 247px;
+                    padding: 9px 0px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    @include breakpoint-down(small) {
+                        height: 129px;
+                        width: 300px;
+                        margin-bottom: 2rem;
+                        justify-content: space-between;
+
+                    }
+
+                    .months {
+                        display: flex;
+                        justify-content: space-between;
+
+                        span {
+                            transition: .5s ease;
+                            width: 100px;
+                            height: 100px;
+                            background-color: #C4C4C4;
+                            font-size: 20px;
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            cursor: pointer;
+
+                            @include breakpoint-down(small) {
+                                height: 40px;
+                                width: 40px;
+                                font-size: 12px;
+
+                            }
+                        }
+
+                        span.active {
+                            width: 120px;
+                            height: 120px;
+                            background-color: var(--clr-green);
+                            color: white;
+                            margin-top: -12px;
+
+                            @include breakpoint-down(small) {
+                                height: 50px;
+                                width: 50px;
+                                font-size: 14px;
+                                margin-top: -6px;
+
+                            }
+                        }
+                    }
+
+                    .descriptionn {
+                        display: flex;
+                        justify-content: space-evenly;
+
+                        .title {
+                            font-size: 17px;
+                            font-weight: 500;
+                            padding-bottom: 6px;
+
+                            @include breakpoint-down(small) {
+                                font-size: 10px;
+                                margin: 0px 0px;
+
+
+                            }
+                        }
+
+                        .desc {
+                            font-size: 27px;
+                            font-weight: bold;
+                            text-align: center;
+
+                            @include breakpoint-down(small) {
+                                font-size: 16px;
+                            }
+                        }
+                    }
+
+
+                }
+            }
+
+            .modal_footer {
+                display: flex;
+                justify-content: space-between;
+                margin-top: 70px;
+
+                align-items: center;
+
+                @include breakpoint-down(small) {
+                    // flex-direction: column;
+                    margin-top: 0px;
+                    flex-direction: column;
+                }
+
+                .footer_left {
+                    p {
+                        padding: 4px;
+                        font-size: 13px;
+
+                        @include breakpoint-down(small) {
+                            text-align: center;
+                            font-size: 10px;
+
+                        }
+                    }
+                }
+
+                .footer_right {
+                    margin-right: 150px;
+
+                    @include breakpoint-down(small) {
+                        margin: 0;
+                        margin-top: 1rem;
+                    }
+
+                    .btn {
+
+                        padding: 10px 18px;
+                        font-size: 15px;
+                        border-radius: 10px;
+                        background-color: var(--clr-green);
+                        color: white;
+                        font-weight: 500;
+                        display: flex;
+                        align-items: center;
+                        border: none;
+                        transition: .5s ease;
+                        cursor: pointer;
+                        letter-spacing: 2px;
+
+                        @include breakpoint-down(small) {
+                            font-size: 12px;
+                        }
+
+                        &:hover {
+                            font-weight: 500;
+                            transform: scale(.99);
+                        }
+
+                        span {
+                            font-size: 16px;
+                            margin-left: 10px;
+                            display: flex;
+                            align-self: flex-end;
+
+                            @include breakpoint-down(small) {
+                                display: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

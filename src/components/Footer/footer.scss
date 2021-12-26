@@ -1,0 +1,141 @@
+@import '../.././global.scss'
+;
+@import '../../breakpoint.scss';
+
+.footer {
+    background-color: black;
+
+    .container {
+        display: flex;
+        padding: 30px 0px;
+        height: 270px;
+
+        @include breakpoint-down(small) {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .logo {
+            flex: 0.7;
+            // border: 1px solid white;
+            font-size: 36px;
+
+            @include breakpoint-down(small) {
+                font-size: 24px;
+                margin-left: 3rem;
+                display: flex;
+                align-items: center;
+            }
+
+            .left {
+                font-weight: bold;
+                color: var(--clr-green);
+            }
+
+            .right {
+                color: var(--clr-blue);
+            }
+        }
+
+        .informations {
+            flex: 2;
+            // background-color: brown;
+            padding-left: 80px;
+            display: grid;
+            grid-template-columns: 200px 200px 200px;
+
+            @include breakpoint-down(small) {
+                display: flex;
+                flex-direction: column;
+                padding: 0;
+                align-items: center;
+            }
+
+            .title {
+                font-size: 20px;
+                color: white;
+                font-weight: bold;
+
+                @include breakpoint-down(small) {
+                    font-size: 14px;
+
+                }
+            }
+
+            .icons_box {
+                p.icons {
+                    display: flex;
+                    margin-left: 5px;
+
+                    @include breakpoint-down(small) {
+                        justify-content: center;
+                        margin-left: 3px;
+                    }
+
+                    span {
+                        color: rgb(255, 255, 255);
+                        font-size: 24px;
+                        padding-top: 12px;
+
+                        @include breakpoint-down(small) {
+                            font-size: 14px;
+                            padding-right: 10px;
+                        }
+
+                        &:nth-child(2) {
+                            padding-left: 22px;
+
+                            @include breakpoint-down(small) {
+                                padding-left: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .adress {
+                @include breakpoint-down(small) {
+                    text-align: center;
+                    margin-top: 1rem;
+                    border-top: 1px solid rgb(0, 255, 21);
+                    padding-top: 5px;
+
+                }
+
+                .desc {
+
+
+                    padding-top: 12px;
+                    color: rgb(255, 255, 255);
+
+                    @include breakpoint-down(small) {
+                        // font-size: 12px;
+
+                    }
+                }
+            }
+
+            .contact {
+
+                @include breakpoint-down (small) {
+                    // padding-top: 10px;
+                    text-align: center;
+                    margin-top: 1rem;
+                    border-top: 1px solid rgb(0, 255, 21);
+                    padding-top: 5px;
+                }
+
+                .number,
+                .mail {
+                    padding-top: 12px;
+                    color: rgb(255, 255, 255);
+
+                    @include breakpoint-down (small) {
+                        // padding-top: 10px;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}

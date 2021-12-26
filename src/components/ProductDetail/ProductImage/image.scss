@@ -1,0 +1,137 @@
+@import '../../../breakpoint.scss';
+@import '../../../global.scss';
+
+.up {
+    flex: 1;
+    margin-right: 2rem;
+
+    @include breakpoint-down(small) {
+        margin-right: 0rem;
+    }
+
+    .btn {
+        margin-bottom: 1rem;
+    }
+
+    .imageContainer {
+        max-width: 621px;
+        height: 621;
+        overflow: hidden;
+
+        @include breakpoint-down(small) {
+            width: 301px;
+        }
+
+        .upImage {
+            img {
+                width: 100%;
+                height: 480px;
+                object-fit: cover;
+
+                @include breakpoint-down(small) {
+                    height: 310px;
+                }
+            }
+        }
+
+        .downImages {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 23px;
+
+            .left,
+            .right {
+                cursor: pointer;
+                font-size: 1.3rem;
+
+                @include breakpoint-down(small) {
+                    background-color: var(--clr-green);
+                    color: #fff;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+
+
+            .image {
+                height: 115px;
+                width: 115px;
+                background-color: lightgrey;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                border-radius: 5px;
+                cursor: pointer;
+                padding: 25px;
+
+                @include breakpoint-down(small) {
+                    height: 45px;
+                    width: 45px;
+                }
+
+                &.active {
+                    border: 2px solid var(--clr-green);
+                    box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+                        rgba(0, 0, 0, 0.22) 0px 10px 10px;
+                }
+
+                &:not(:last-child) {
+                    margin-right: 23px;
+
+                    @include breakpoint-down(small) {
+                        margin-right: 8px;
+                    }
+                }
+
+
+                &:nth-child(2) {
+                    margin-left: 23px;
+
+                    @include breakpoint-down(small) {
+                        margin-left: 8px;
+                    }
+                }
+
+
+
+                img {
+                    width: 64px;
+                    height: 100%;
+                    object-fit: cover;
+
+                    @include breakpoint-down(small) {
+                        height: 45px;
+                        width: 40px;
+                        object-fit: contain;
+
+                    }
+                }
+            }
+        }
+    }
+
+
+}
+
+// .image {
+//     align-content: center;
+//     justify-items: center;
+//     display: grid;
+//     gap: 16px;
+//     grid-template-columns: repeat(5, 1fr);
+//     margin-top: 1rem;
+
+//     .active {
+//         border: 2px solid black;
+//         box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+//             rgba(0, 0, 0, 0.22) 0px 10px 10px;
+//     }
+
+//     img {
+
+//         object-fit: cover;
+//         cursor: pointer;
+//     }
+// }

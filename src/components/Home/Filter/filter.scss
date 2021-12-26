@@ -1,0 +1,205 @@
+@import '../../../breakpoint.scss';
+@import '../../../global.scss';
+
+.filter {
+    // width: 334px;
+    flex: .6;
+    // border: 1px solid yellow;
+    padding: 21px;
+
+    @include breakpoint-down(small) {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 2rem;
+        padding: 0px;
+    }
+
+    h2 {
+        @include breakpoint-down(small) {
+            font-size: .8rem;
+        }
+    }
+
+    .filter_categories {
+        hr {
+            border: none;
+            border-bottom: 1px solid var(--clr-gray);
+        }
+
+        @include breakpoint-down(small) {
+            .title {
+                text-align: center;
+            }
+        }
+
+        ul {
+            li.active {
+
+                a {
+                    border-bottom: 3px solid green;
+
+                }
+            }
+
+            li {
+                padding-bottom: 22px;
+
+                @include breakpoint-down(small) {
+                    text-align: center;
+                    padding-bottom: 10px;
+                }
+
+                &:first-child {
+                    padding-top: 22px;
+                }
+
+                a {
+                    transition: .5s ease-in-out;
+                    font-size: 16px;
+                    cursor: pointer;
+                    text-transform: capitalize;
+
+                    @include breakpoint-down(small) {
+                        font-size: 13px;
+                    }
+                }
+            }
+        }
+    }
+
+    .filter_price {
+        &_title {
+            padding: 18px 0px;
+
+            @include breakpoint-down(small) {
+                padding: 0;
+                text-align: center;
+            }
+
+        }
+
+        &_range {
+            padding: 22px 0px;
+
+            .double_input {
+                position: relative;
+                width: 279px;
+                height: 50px;
+                border: 1px solid var(--border-gray);
+
+                @include breakpoint-down(small) {
+                    width: 119px;
+                    height: 35px;
+                }
+
+                input {
+                    width: 226px;
+                    position: absolute;
+                    bottom: -35%;
+                    left: 50%;
+                    right: 50%;
+                    transform: translate(-50%, -50%);
+
+                    @include breakpoint-down(small) {
+                        width: 96px;
+                        bottom: -52%;
+                    }
+                }
+
+                label {
+                    position: absolute;
+                    right: 10%;
+                    top: 40%;
+
+                    @include breakpoint-down(small) {
+                        width: 86px;
+                        right: -18%;
+                        top: 20%;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .filter_companies {
+
+
+        &_title {
+            padding-bottom: 20px;
+
+            @include breakpoint-down(small) {
+                padding-bottom: 0px;
+                text-align: center;
+
+            }
+        }
+
+        hr {
+            margin-bottom: 20px;
+        }
+
+        //input radio
+        div {
+            display: flex;
+            align-items: center;
+
+            padding-bottom: 20px;
+
+
+
+
+
+            input[type='radio'] {
+                cursor: pointer;
+                -webkit-appearance: none;
+                width: 18px;
+                height: 18px;
+                border: 1px solid rgb(0, 0, 0);
+                border-radius: 50%;
+                outline: none;
+
+                @include breakpoint-down(small) {
+                    background-color: lawngreen;
+                    text-align: center;
+                    margin-left: 15px;
+                    width: 15px;
+                    height: 15px;
+                }
+
+            }
+
+            input[type='radio']:before {
+                content: '';
+                display: block;
+                width: 50%;
+                height: 50%;
+                margin: 25% auto;
+                border-radius: 50%;
+
+                @include breakpoint-down(small) {
+                    width: 40%;
+                    height: 40%;
+                    margin: 25% auto;
+                }
+            }
+
+            input[type='radio']:checked:before {
+                background: rgb(0, 0, 0);
+            }
+
+            label {
+                cursor: none;
+                user-select: none;
+                text-transform: capitalize;
+                margin-left: 10px;
+
+                @include breakpoint-down(small) {
+                    font-size: 11px;
+
+                }
+            }
+        }
+    }
+}

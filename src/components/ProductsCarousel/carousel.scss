@@ -1,0 +1,131 @@
+@import '../../breakpoint.scss';
+@import '../../breakpoint.scss';
+
+.product_carousel {
+    .title {
+        padding-top: 50px;
+        padding-bottom: 30px;
+        // background-color: red;
+        text-align: center;
+    }
+
+    .carousel_list {
+        padding-bottom: 90px;
+
+        .slider {
+            height: auto;
+            margin: auto;
+            position: relative;
+            width: 100%;
+            display: grid;
+            place-items: center;
+            overflow-x: hidden;
+            padding: 20px 0px;
+
+            ///shadowsss
+            // &::before,
+            // &::after {
+            //     background: linear-gradient(to right, rgba(255, 255, 255, 1)0%,
+            //             rgba(255, 255, 255, 0)100%);
+            //     content: '';
+            //     height: 100%;
+            //     width: 14%;
+            //     position: absolute;
+            //     z-index: 2;
+            // }
+
+            // &::before {
+            //     left: 0;
+            //     top: 0;
+            // }
+
+            // &::after {
+            //     right: 0;
+            //     top: 0;
+            //     transform: rotateZ(180deg);
+            // }
+
+
+            .slider_track {
+                display: flex;
+                width: calc(250px*10);
+                animation: scroll 20s linear infinite;
+
+                &:hover {
+                    animation-play-state: paused;
+                }
+
+
+                .slide {
+
+                    // heigh  width yazmasagda olardi sade ce yzdk ki cartnan eyni olsun
+                    // height: 400px;
+                    // width: 296px;
+                    display: flex;
+                    align-items: center;
+                    // padding: 15px;
+                    margin-left: 25px;
+                    perspective: 100px;
+
+                    // @include breakpoint-down(small) {
+                    //     width: 50px;
+                    //     height: 50px;
+
+                    // }
+
+                    img {
+                        // width: 100%;
+                        // transition: 1s;
+
+                        // &:hover {
+                        //     transform: rotateZ(20px);
+                        // }
+                    }
+
+                    @include breakpoint-down(small) {
+                        .card {
+                            width: 150px;
+                            height: 200px;
+                            border-radius: 2px;
+
+                            &_image {
+                                img {
+                                    height: 120px;
+                                    border-radius: 2px;
+
+                                }
+                            }
+
+                            &_desc {
+                                font-size: 10px;
+                                padding: 10px;
+                            }
+
+                            &_price {
+                                font-size: 10px;
+                                padding: 0px 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0%);
+    }
+
+    100% {
+        transform: translateX(calc(-250px*5));
+    }
+}
+
+// border: 1px solid red;
+// display: grid;
+// grid-template-columns: 1fr 1fr 1fr 1fr;
+// grid-gap: 22px;
+// padding-bottom: 42px;

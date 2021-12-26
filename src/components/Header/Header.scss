@@ -1,0 +1,180 @@
+@import '../../global.scss';
+@import '../../breakpoint.scss';
+
+//ul li a  > 24px
+//logo 36px
+//icons width 30 height 30
+.container {
+    .header {
+        padding: 28px 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        height: 100%;
+
+        @include breakpoint-down(small) {
+            padding: 10px 0px;
+
+        }
+
+        .logo {
+
+            @include breakpoint-down(small) {
+                margin-left: 2rem;
+
+                .right {
+                    margin-left: -22px;
+                }
+            }
+
+            span {
+                @include breakpoint-down(small) {
+                    font-size: 1.3rem;
+                    margin-right: 2rem;
+                }
+
+
+
+                font-size: 35px;
+
+
+            }
+
+            .left {
+                font-weight: bold;
+                color: var(--clr-green)
+            }
+
+            .right {
+                color: var(--clr-blue)
+            }
+        }
+
+        .list {
+            flex: 1;
+            margin-left: 190px;
+
+            @include breakpoint-down(small) {
+                display: none;
+
+            }
+
+            ul {
+                display: flex;
+
+                @include breakpoint-down(small) {
+                    flex-direction: column;
+                    margin-top: 2rem;
+                }
+
+                li {
+                    transition: .5s ease;
+
+                    @include breakpoint-down(small) {
+                        padding: 6px 0px;
+                        width: 100%;
+                        display: flex;
+                        align-self: center;
+                        justify-content: center;
+
+                        &:hover {
+                            background-color: rgb(230, 230, 230);
+                        }
+                    }
+
+                    &.active {
+                        a {
+                            color: rgb(8, 207, 75);
+                        }
+                    }
+
+
+                    &:nth-child(2) {
+                        padding: 0px 60px;
+
+                        @include breakpoint-down(small) {
+                            padding: 6px 0px;
+                        }
+
+                    }
+
+                    a {
+                        font-size: 24px;
+                        transition: .6s ease;
+
+                        @include breakpoint-down(small) {
+                            font-size: 20px;
+                        }
+
+                        &:hover {
+                            color: var(--clr-green);
+                            transform: scale(.99);
+                        }
+                    }
+                }
+            }
+        }
+
+        .icons {
+            position: relative;
+            width: 82px;
+            height: 30px;
+            font-size: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            @include breakpoint-down(small) {
+                display: none;
+            }
+
+
+            .badge {
+                font-size: .8rem;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background-color: rgb(1, 2, 2);
+                color: rgb(47, 241, 255);
+                padding: 11px;
+                display: flex;
+                font-weight: bold;
+                align-items: center;
+                justify-content: center;
+                position: absolute;
+                top: -5px;
+                right: -15px;
+            }
+
+            .heart {
+                cursor: pointer;
+                transition: .5s ease;
+
+                &:hover {
+                    transform: translateY(-5px);
+                }
+            }
+
+            .shopping {
+                cursor: pointer;
+
+                transition: .5s ease;
+
+                &:hover {
+                    transform: translateY(-5px);
+                }
+            }
+        }
+
+        .hamburger_menu {
+            display: none;
+
+            @include breakpoint-down(small) {
+                display: block;
+                font-size: 1.3rem;
+                margin-right: 2rem;
+            }
+        }
+    }
+}
